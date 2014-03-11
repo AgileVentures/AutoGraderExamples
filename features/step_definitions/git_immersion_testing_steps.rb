@@ -23,6 +23,13 @@ Given(/^gems are installed$/) do
   expect(@test_errors).to be_empty
 end
 
+Given(/^AutoGraders are installed$/) do
+  @test_output, @test_errors, @test_status = Open3.capture3(
+      { 'BUNDLE_GEMFILE' => 'Gemfile' }, 'cucumber install'
+  )
+  expect(@test_errors).to be_empty
+end
+
 When(/^I run AutoGrader for (.*) and (.*)$/) do |test_subject, spec|
   run_ag("#{@hw_path}/#{test_subject}", "#{@hw_path}/#{spec}")
 end
