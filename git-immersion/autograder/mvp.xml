@@ -1,0 +1,16 @@
+<problem markdown="null" max_attempts="null">
+  <startouttext/>
+  <p>
+    Do the GitImmersion tutorial and create a gitimmersion repo on your github account that contains the results of the tutorial work.
+  </p>
+  <p>
+    To submit your work, please upload a text file that contains only your github username:
+  </p>
+  <endouttext/>
+  <coderesponse queuename="cs169-rev-development">
+    <filesubmission points="100"/>
+    <codeparam>
+      <grader_payload>git-immersion</grader_payload>
+    </codeparam>
+  </coderesponse>
+</problem>
