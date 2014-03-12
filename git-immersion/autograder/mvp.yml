@@ -1,0 +1,3 @@
+    git-immersion:
+      uri: ../AutoGraderExamples/git-immersion/autograder/mvp_spec.rb
+      type: GithubRspecGrader

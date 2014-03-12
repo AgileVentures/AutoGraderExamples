@@ -1,0 +1,1 @@
+The mvp.xml file is the xml contents that need to be added to the edX LMS in order to create a gradable interface for this assignment. The queue name needs to match that being used by a live autograder instance.  That live autograder instance will also need the contents of the mvp.yml file (or similar) added to its autograder.yml config.
