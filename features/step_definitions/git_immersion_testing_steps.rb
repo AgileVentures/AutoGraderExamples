@@ -8,7 +8,7 @@ def run_ag(subject, spec)
   run_process cli_string
 end
 
-def run_process(cli_string, dir='rag')
+def run_process(cli_string, dir=@autograders)
   @test_output, @test_errors, @test_status = Open3.capture3(
       { 'BUNDLE_GEMFILE' => 'Gemfile' }, cli_string, :chdir => dir
   )
