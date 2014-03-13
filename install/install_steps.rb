@@ -83,20 +83,6 @@ Then(/^I should see no difference$/) do
   #puts "'#{@dir}' matches origin/#{@branch} branch"
 end
 
-
-And(/^I should see (\d+) gems$/) do |num|
-  run_process('bundle list', @dir, true)
-  expect(@test_output.lines.select{|x| x.match /\*/}).to have(num).gems
-end
-
-# duplicate steps from hw_testing_steps
-
 Then(/^I should see that there are no errors$/) do
   expect(@test_status).to be_success
-end
-
-Then(/I should see the execution results$/) do
-  puts @test_status
-  puts @test_errors
-  puts @test_output
 end
