@@ -6,18 +6,14 @@ Feature: Installation of dependencies
   Scenario: Install gems
     Given that I am in the project root directory "AutoGraderExamples"
     When I install gems
-    #Then I should see 25 gems
-    And I should see that there are no errors
+    Then I should see that there are no errors
 
   Scenario: Install or check AutoGraders
     Given that I am in the project root directory "AutoGraderExamples"
     When I install or check "saasbook/rag" as "rag"
     And I change to branch "develop"
     And I install the AutoGrader gems
-    # Debug:
-    Then I should see the execution results
-    #And I should see 74 gems
-    And I should see that there are no errors
+    Then I should see that there are no errors
 
   Scenario: Verify correct version of AutoGraders
     Given I go to the AutoGrader directory "rag"

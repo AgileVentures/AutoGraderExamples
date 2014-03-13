@@ -5,9 +5,7 @@ Feature: Testing instructor created homeworks
 
   Scenario Outline: The project is set up and runs correctly
     Given I have the homework in "git-immersion"
-    # And gems are installed
     And AutoGraders are in "rag"
-    # And AutoGrader gems are installed
     When I run AutoGrader for <test_subject> and <spec>
     Then I should see that the results are <expected_result>
     And I should see the execution results with <test_title>
