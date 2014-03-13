@@ -1,8 +1,26 @@
 require 'open3'
 
 def run_in_dir(arg_string, dir=@dir)
-  @test_output, @test_errors, @test_status = Open3.capture3(arg_string, :chdir => dir)
-  puts @test_errors if @test_errors != ''
+  run_process(arg_string, dir, false)
+end
+
+def run_process(cli_string, dir='.', gemfile=false)
+  if gemfile
+    @test_output, @test_errors, @test_status = Open3.capture3(
+        { 'BUNDLE_GEMFILE' => 'Gemfile' }, cli_string, :chdir => dir
+    )
+  else
+    @test_output, @test_errors, @test_status = Open3.capture3(
+        cli_string, :chdir => dir
+    )
+  end
+  show_errors
+end
+
+def show_errors
+  if @test_errors.empty? == false && @test_status.success? == false
+    expect(@test_output + @test_errors + @test_status.to_s).to eql ''
+  end
 end
 
 
@@ -29,15 +47,13 @@ end
 
 When(/^I install gems$/) do
   @dir = Dir.getwd
-  @test_output, @test_errors, @test_status = Open3.capture3(
-      { 'BUNDLE_GEMFILE' => 'Gemfile' }, 'bundle install'
-  )
+  run_process 'bundle install', '.', true
 end
 
 When(/^I install or check "(.*)" as "(.*)"$/) do |repo, dir|
   if ! Dir.exists?(dir)
     puts "Clone AutoGraders as '#{dir}'"
-    @test_output, @test_errors, @test_status = Open3.capture3("git clone https://github.com/#{repo} #{dir}" )
+    run_process("git clone https://github.com/#{repo} #{dir}" )
   else
     puts "Existing '#{dir}'. Skip clone, fetch instead."
     run_in_dir("git fetch origin", dir )
@@ -56,9 +72,7 @@ When(/^I change to branch "(.*?)"$/) do |branch|
 end
 
 And(/^I install the AutoGrader gems$/) do
-  @test_output, @test_errors, @test_status = Open3.capture3(
-      { 'BUNDLE_GEMFILE' => 'Gemfile' }, 'bundle install', :chdir => @dir
-  )
+  run_process('bundle install', @dir, true)
 end
 
 ## Then Steps
@@ -69,22 +83,6 @@ Then(/^I should see no difference$/) do
   #puts "'#{@dir}' matches origin/#{@branch} branch"
 end
 
-
-And(/^I should see (\d+) gems$/) do |num|
-  @test_output, @test_errors, @test_status = Open3.capture3(
-      { 'BUNDLE_GEMFILE' => 'Gemfile' }, 'bundle list', :chdir => @dir
-  )
-  expect(@test_output.lines.select{|x| x.match /\*/}).to have(num).gems
-end
-
-# duplicate steps from hw_testing_steps
-
 Then(/^I should see that there are no errors$/) do
   expect(@test_status).to be_success
-end
-
-Then(/I should see the execution results$/) do
-  puts @test_status
-  puts @test_errors
-  puts @test_output
 end

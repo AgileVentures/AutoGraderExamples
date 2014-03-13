@@ -5,10 +5,22 @@ def run_ag(subject, spec)
   git_user = IO.read(subject)
   cli_string = "./new_grader -t GithubRspecGrader #{git_user} ../#{spec}"
   cli_string = cli_string.gsub("\n", ' ')
-  @test_output, @test_errors, @test_status = Open3.capture3(
-      { 'BUNDLE_GEMFILE' => 'Gemfile' }, cli_string, :chdir => @autograders
-  )
+  run_process cli_string
 end
+
+def run_process(cli_string, dir=@autograders)
+  @test_output, @test_errors, @test_status = Open3.capture3(
+      { 'BUNDLE_GEMFILE' => 'Gemfile' }, cli_string, :chdir => dir
+  )
+  show_errors
+end
+
+def show_errors
+  if @test_errors.empty? == false && @test_status.success? == false
+    expect(@test_output + @test_errors + @test_status.to_s).to eql ''
+  end
+end
+
 
 
 Given(/^I have the homework in "(.*?)"$/) do |hw|
@@ -41,14 +53,4 @@ end
 And(/^I should see the execution results with (.*)$/) do |test_title|
   success = @test_status.success? ? 'Success' : 'Failure'
   puts success + '!'
-end
-
-Then(/^I should see that there are no errors$/) do
-  expect(@test_status).to be_success
-end
-
-Then(/I should see the execution results$/) do
-  puts @test_status
-  puts @test_errors
-  puts @test_output
 end
