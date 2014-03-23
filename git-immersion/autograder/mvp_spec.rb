@@ -6,7 +6,7 @@ describe "Github" do
   let(:commits) { Octokit.commits_since(repo_name,'2014-01-01') }
 
   it "should find a gitimmersion repository for the user [5 points]" do
-    (repo_name).should be_true
+    (Octokit.repository? repo_name).should be_true
   end
 
   it 'should have at least 3 recent commits in name of user  [15 points]' do
