@@ -5,7 +5,7 @@ describe "Github" do
   let(:repo_name ) { ENV['GITHUB_USERNAME']+'/gitimmersion' }
   let(:commits) { Octokit.commits_since(repo_name,'2014-01-01') }
 
-  it "should find a gitimmersion repository for the user [5 points]" do
+  it "should find a gitimmersion repository for the user #{ ENV['GITHUB_USERNAME']+'/gitimmersion' } [5 points]" do
     (Octokit.repository? repo_name).should be_true
   end
 
