@@ -12,6 +12,6 @@ Feature: Testing instructor created homeworks
   Examples:
     | test_title        | test_subject           | spec                   | expected_result       |
     | specs vs solution | solutions/username.txt | autograder/mvp_spec.rb | Score out of 100: 100 |
-    | specs vs solution | solutions/tansaku.txt  | autograder/mvp_spec.rb | Score out of 100: 20  |
+    | specs vs solution | solutions/tansaku.txt  | autograder/mvp_spec.rb | Score out of 100: 12 |
 
     # TODO ideally we should be stubbing the octokit gem ... use https://github.com/vcr/vcr ?
