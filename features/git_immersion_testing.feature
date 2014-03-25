@@ -10,13 +10,10 @@ Feature: Testing instructor created homeworks
     Then I should see that the results are <expected_result>
     And I should see the execution results with <test_title>
   Examples:
-    | test_title        | test_subject           | spec                     | expected_result      |
-    # Zero points for forked repo, or repo not found
-    | specs vs solution | solutions/jhasson84.txt| autograder/mvp_spec.rb   | Score out of 100: 0  |
-    # 10 points for non-forked repo exists
-    | specs vs solution | solutions/tansaku.txt  | autograder/mvp_spec.rb   | Score out of 100: 10 |
-    # 65 points for non-forked repo with more than 6 commits
-    | specs vs solution | solutions/apelade.txt  | autograder/mvp_spec.rb   | Score out of 100: 65 |
+    | test_title              | test_subject           | spec                     | expected_result      |
+    | forked repo             | solutions/jhasson84.txt| autograder/mvp_spec.rb   | Score out of 100: 0  |
+    | non-forked repo         | solutions/tansaku.txt  | autograder/mvp_spec.rb   | Score out of 100: 12 |
+    | non-forked, > 6 commits | solutions/apelade.txt  | autograder/mvp_spec.rb   | Score out of 100: 67 |
 
     # TODO ideally we should be stubbing the octokit gem ... use https://github.com/vcr/vcr ?
     # TODO Local or git repos that will never disappear ?
