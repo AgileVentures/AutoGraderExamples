@@ -3,7 +3,7 @@ rvm:
 - 1.9.3
 env:
   global:
-    - secure: "codDCIg6hzovKc+EPTEJ6QlWFxxfKrZv6ATIqnNzyjxvGwPVPcN7Rr0PMdZeJg8APJ/Hk+BsAKWmyhqa3LbR/U3yR0Npl+w6K2IisKoshRrCb4KIJbh4QS53CHsn8d9g6YFXLbN5OQacuPaStGJGUUyJ3dfizfN1pCr6rtpX8A8="
+    - secure: secure: "HTywVSjY2Qv78fBpPgtgcpmF25KzUpKnE7SCfqXUX+Sp8GR4rfMmB2bVuxxDwRCYm80BGMNM+C8+6SHN2NbnzWPCNjjSgycrzp2IRkaSPSganKMedM8/PDH/iIRKbAiGYKHGNDHmFhsdNzPc9vPIckDUL6qsQG9WynFyYCYLtzg="
 before_install:
 - gem install cucumber
 - gem install rspec
