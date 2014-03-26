@@ -8,7 +8,7 @@ describe "Github" do
     # Rate limit is 5000/hr
     # This ENV var comes from travis env:global:secure or set by admin
     # PAULS_GIT_IMMERSION_TOKEN is configured to allow only read of public access data
-    @token = ENV['PAULS_GIT_IMMERSION_TOKEN']
+    @token = ENV['GIT_IMMERSION_TOKEN']
     #START_DATE = '2014-01-01'
     @start_date = Date.today << 12 # months
 
