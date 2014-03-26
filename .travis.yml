@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-  - "1.9.3"
+- 1.9.3
+env:
+  global:
+    - secure: "HTywVSjY2Qv78fBpPgtgcpmF25KzUpKnE7SCfqXUX+Sp8GR4rfMmB2bVuxxDwRCYm80BGMNM+C8+6SHN2NbnzWPCNjjSgycrzp2IRkaSPSganKMedM8/PDH/iIRKbAiGYKHGNDHmFhsdNzPc9vPIckDUL6qsQG9WynFyYCYLtzg="
 before_install:
-# works with default latest 2.2.2 as of 2014/3/11
-#  - gem update --system 2.2.0
-#  - gem --version
-  - gem install cucumber
-  - gem install rspec
+- gem install cucumber
+- gem install rspec
 script:
-  - cucumber install/install.feature
-  - cucumber features
+- cucumber install/install.feature
+- cucumber features
