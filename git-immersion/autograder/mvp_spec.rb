@@ -30,7 +30,7 @@ describe "Github" do
   end
 
   #TODO point per commit is possible?
-  it "should have at least 3 commits since #{START_DATE} [10 points]" do
+  it "should have at least 3 commits since #{START_DATE} [5 points]" do
     @commits.count.should be > 3
   end
 
@@ -40,6 +40,10 @@ describe "Github" do
 
   it "should have at least 9 commits since #{START_DATE} [10 points]" do
     @commits.count.should be > 9
+  end
+
+  it "should have more some tags [5 points]" do
+    @client.tags(USER_REPO).should_not be_nil
   end
 
 end
