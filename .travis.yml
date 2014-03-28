@@ -3,7 +3,10 @@ rvm:
 - 1.9.3
 env:
   global:
+#   Sam's
     - secure: "MLwcHLj9um308gO3I0EGUiCR5yPylDdifFDPtUkvleaGs85bbMA/Yfy9Mn8tXXcs9fGMfoNBN1e+J5KkhENEnIXr5BKWMR6CfujxRDJB9fflAPEPz4mp0DuNIOlVj9NXiZBvyoHZIr9ZV2Ha4IPZUcQv1hzrn6DomZ5GVw3z/FM="
+#   Paul's GIT_IMMERSION_TOKEN allows travis to get it on push to his fork, maybe not in pull request from fork
+    - secure: "azlzn4mWC1APG7U78V9OaoEt8bnd7OSdWus9EsziyH3HRtGlDsZyCAOYfvP34auuql1I5svSWkSs8mdR5AZrXA2F7CbnGLlSxf6KqNzNp2pbzQCqabdWxk2rxZkrOYoh67xH1BILs2T0XNY5OxVNF0JvOyJxXZS2imeFVeIcLlI="
 before_install:
 - gem install cucumber
 - gem install rspec
