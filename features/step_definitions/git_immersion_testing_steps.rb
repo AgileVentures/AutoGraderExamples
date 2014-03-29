@@ -40,7 +40,7 @@ end
 
 
 Given(/^I must rely on anonymous Octokit calls if running Travis CI on a pull request from a fork$/) do
-  @travis_pull_request_from_fork =  (ENV['TRAVIS_SECURE_ENV_VARS'] == 'true') && (ENV['TRAVIS_PULL_REQUEST'] != 'false')
+  @travis_pull_request_from_fork =  (ENV['TRAVIS_SECURE_ENV_VARS'] == 'false') && (ENV['TRAVIS_PULL_REQUEST'] != 'false')
   if @travis_pull_request_from_fork
     puts "Travis operating on a pull request from a fork. Secure env variables are not permitted.\n" +
          "Using nil ENV['GIT_IMMERSION_TOKEN']: anonymous Octokit calls with a rate limit of 60/hr.\n"+
