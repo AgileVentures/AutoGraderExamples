@@ -1,6 +1,17 @@
 require 'octokit'
 require 'rspec'
 
+def check_client
+  if @client.access_token.nil?
+    $stderr.puts "WARNING: ENV['GIT_IMMERSION_TOKEN'] is nil, using anonymous GitHub API.\n"+
+      "Remaining rate limit: #{@client.rate_limit.remaining}. Time to reset: #{@client.rate_limit.resets_in / 60} minutes"
+  end
+  begin
+    @client.rate_limit.remaining
+  rescue Octokit::Unauthorized => e
+    raise e, "ERROR: Invalid token likely provided in ENV['GIT_IMMERSION_TOKEN']: #{e.message}", e.backtrace
+  end
+end
 
 describe "Github" do
 
@@ -11,12 +22,12 @@ describe "Github" do
   USER_REPO = ENV['GITHUB_USERNAME']+'/gitimmersion'
 
   before (:all) do
-    # Rate limit is 5000/hr
+    # Rate limit is 5000/hr with good token, 60/hr with
     # This ENV var comes from travis env:global:secure or set by admin
-    # TODO Do these expire??
+    # TODO Do these tokens expire??
     # GIT_IMMERSION_TOKEN is configured to allow only read of public access data
-    @token = ENV['GIT_IMMERSION_TOKEN']
-    @client = Octokit::Client.new(:access_token => @token)
+    @client = Octokit::Client.new(:access_token => ENV['GIT_IMMERSION_TOKEN'])
+    check_client
     @commits =  @client.commits_since(USER_REPO, START_DATE)
   end
 

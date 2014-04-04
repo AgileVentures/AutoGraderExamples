@@ -17,15 +17,15 @@ Feature: Testing instructor created homeworks
     | non-forked, > 6 commits | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 90 | apelade         |
 
   Scenario: Check GitHub api key is configured
-    Given I have a valid token set in environment variable "GIT_IMMERSION_TOKEN"
-    # I put mine in /etc/environment
+    Given I must rely on anonymous Octokit calls if running Travis CI on a pull request from a fork
+    And Or I have a valid token set in environment variable "GIT_IMMERSION_TOKEN"
     When I check my remaining rate limit
     Then I should see it is a number, not nil
 
   Scenario: Confirm code uses that api key, not anonymous
     Given I have tests and token set up
-    When I repeat the test of "apelade.txt" against autograder "mvp_spec.rb" for 2 times
-    Then I should see my remaining rate limit has declined a few times more than that
+    When I repeat the test of "apelade.txt" against autograder "mvp_spec.rb"
+    Then I should see my remaining rate limit has declined
 
     # TODO ideally we should be stubbing the octokit gem ... use https://github.com/vcr/vcr ?
     # TODO Local or git repos that will never disappear ?
