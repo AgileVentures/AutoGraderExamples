@@ -39,20 +39,19 @@ And(/^I should see the execution results with (.*)$/) do |test_title|
 end
 
 
-Given(/^I must rely on anonymous Octokit calls if running Travis CI on a pull request from a fork$/) do
+Given(/^I only get 60\/hr GitHub API rate limit on pull requests from a dev fork$/) do
   @travis_pull_request_from_fork =  (ENV['TRAVIS_SECURE_ENV_VARS'] == 'false') && (ENV['TRAVIS_PULL_REQUEST'] != 'false')
-  if @travis_pull_request_from_fork
-    puts "Travis operating on a pull request from a fork. Secure env variables are not permitted.\n" +
-         "Using nil ENV['GIT_IMMERSION_TOKEN']: anonymous Octokit calls with a rate limit of 60/hr.\n"+
-         "Beware of exceeding the Github API rate limit from repeating the tests / pull request builds from forks!"
-  end
+  puts "detected pull request from dev fork" if @travis_pull_request_from_fork
+  #  puts "Travis operating on a pull request from a fork. Secure env variables are not permitted.\n" +
+  #       "Using nil ENV['GIT_IMMERSION_TOKEN']: anonymous Octokit calls with a rate limit of 60/hr.\n"+
+  #       "Beware of exceeding the Github API rate limit when more tests are added!"
+  #end
 end
 
-And(/^Or I have a valid token set in environment variable "([^"]*)"$/) do |var|
-  #It's OK if this is nil because it will then create the anonymous client
+And(/^I have a nil or valid value for environment variable "([^"]*)"$/) do |var|
   @token = ENV["#{var}"]
   if @token.nil? and not @travis_pull_request_from_fork
-    puts "Go add an environment variable to your machine or secure env variable to travis.\n"+
+    puts "For 5000/hr rate limit, go add an API key environment variable to your machine or secure env variable to travis.\n"+
          "See https://github.com/AgileVentures/AutoGraderExamples/blob/master/README.md"
   end
   @client = Octokit::Client.new(:access_token => @token)
@@ -71,12 +70,12 @@ end
 
 
 Given(/^I have tests and token set up$/) do
-  steps %Q{
-    Given I must rely on anonymous Octokit calls if running Travis CI on a pull request from a fork
-    And Or I have a valid token set in environment variable "GIT_IMMERSION_TOKEN"
+  steps '
+    Given I only get 60/hr GitHub API rate limit on pull requests from a dev fork
+    And I have a nil or valid value for environment variable "GIT_IMMERSION_TOKEN"
     And I have the homework in "git-immersion"
     And AutoGraders are in "rag"
-  }
+  '
 end
 
 When(/^I repeat the test of "(.*)" against autograder "(.*)"$/) do |subject, spec|
