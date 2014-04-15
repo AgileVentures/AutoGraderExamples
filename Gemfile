@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'cucumber'
+gem 'debugger'
+gem 'mechanize'
+gem 'metric_fu'
 gem 'octokit'
 gem 'rspec'
-gem 'cucumber'
+gem 'simplecov'
+gem 'simplecov-rcov'
+gem 'term-ansicolor'
+gem 'ZenTest'
