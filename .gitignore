@@ -16,3 +16,9 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# ruby version control
+.rvmrc
+
+# rubymine garbage
+.idea/
