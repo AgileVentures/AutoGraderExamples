@@ -14,13 +14,14 @@ Example Assignments for Use with the Ruby AutoGrader
 - `cucumber install`
 
 #### **Git-immersion Note:** For deployment, and feature tests using Octokit.client over 60/hr, you must do this!
-- The OAuth ENV var `GIT_IMMERSION_TOKEN` used in mvp_spec.rb allows 5000/hr rate limit, whereas anonymous Octokit calls allow 60/hr. If not set, it will try to use anonymous connect.
+- The OAuth ENV var `GIT_IMMERSION_TOKEN` used in mvp_spec.rb allows 5000/hr rate limit, whereas anonymous Octokit calls allow 60/hr.
+- If not set, it will try to use anonymous connect. Pull requests from forks to AgileVentures/AutoGraderExamples are detected and try to use the anonymous connect.
+
 #### To gain access to a higher rate limit:
 - Generate the token on GitHub > Settings > Applications Personal API  Token with **Zero Scopes**. Uncheck all boxes to allow only read access of public data.
 - For production deployment and Your local, it is set by admin (you?), eg in /etc/environment and start a new shell.
 - For travis CI, it has been encrypted and added to .travis.yml under env:global:secure
-- It is encrypted with `gem install travis && travis encrypt GIT_IMMERSION_TOKEN=<your personal token>`
-- **Note** that pull requests from forks to AgileVentures/AutoGraderExamples are detected and try to use the anonymous connect.
+- It is encrypted with `gem install travis && travis encrypt GIT_IMMERSION_TOKEN=<a token>`
 
 ### **Run:**
 - `cucumber` runs a feature per homework.
