@@ -15,12 +15,11 @@ Example Assignments for Use with the Ruby AutoGrader
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
 - `git clone https://github.com/<your user name>/AutoGraderExamples`, and cd there.
 - `ruby -v` should be '1.9.3'
-- `git checkout develop` which is the default now.
-- `gem install cucumber`
-- `gem install rspec`
+- `git checkout develop` which is the default presently.
+- `gem install cucumber rspec`
 - `cucumber install`
 - `cucumber features`
-- "Error due to Missing Gems?" `cd ./rag` and do `bundle install` there, then `cd ..`
+- **"Error due to Missing Gems?"** cd to AutoGraderExamples/rag/ and do `bundle install` there, then `cd ..`
 
 #### **Git-immersion Note:** For deployment, and feature tests using Octokit.client over 60/hr, you must do this!
 - The OAuth ENV var `GIT_IMMERSION_TOKEN` used in mvp_spec.rb allows 5000/hr rate limit, whereas anonymous Octokit calls allow 60/hr.
