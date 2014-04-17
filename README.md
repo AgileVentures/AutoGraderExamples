@@ -11,10 +11,13 @@ Example Assignments for Use with the Ruby AutoGrader
 - Fork on github, clone it, and cd there.
 - install ruby '1.9.3' with rvm and `rvm use` use it
 - `git checkout develop` or consider it for the latest.
+- There is some problem with the install, but these steps should make up for it.
 - `gem install cucumber`
 - `gem install rspec`
 - `bundle install`
 - `cucumber install`
+- cd rag, and bundle install, cd back up
+- `cucumber features`
 
 #### **Git-immersion Note:** For deployment, and feature tests using Octokit.client over 60/hr, you must do this!
 - The OAuth ENV var `GIT_IMMERSION_TOKEN` used in mvp_spec.rb allows 5000/hr rate limit, whereas anonymous Octokit calls allow 60/hr.
