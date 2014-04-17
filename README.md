@@ -9,6 +9,7 @@ Example Assignments for Use with the Ruby AutoGrader
 
 ### **Install:**
 - Fork on github, clone it, and cd there.
+- install ruby '1.9.3' with rvm and `rvm use` use it
 - `git checkout develop` or consider it for the latest.
 - `bundle install`
 - `cucumber install`
