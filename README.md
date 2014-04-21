@@ -8,8 +8,15 @@ Example Assignments for Use with the Ruby AutoGrader
 **Usual platform:** linux or mac, ruby 1.9.3
 
 
-### **Plain Vagrant install:**
-- https://github.com/AgileVentures/AutoGraderExamples/wiki/Vagrant-Setup
+### **Fast Vagrant install:**
+- Fork on github: https://github.com/AgileVentures/AutoGraderExamples
+- ON YOUR HOST: clone or download the zip file
+- cd to the cloned directory
+- `vagrant up`
+- `vagrant ssh`
+- cd to the project dir, I think it is on root: /AutoGraderExamples
+- `cucumber install`
+- `cucumber`
 
 ### **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
