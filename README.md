@@ -15,10 +15,11 @@ Example Assignments for Use with the Ruby AutoGrader
 - *ON YOUR HOST*: clone or download the zip file
 - cd to the cloned directory
 - `vagrant up`       => launches and provisions vm if first run
-- `vagrant ssh`      => command line if first run
+- `vagrant ssh`      => command line access
 - cd to the project dir, I think it is on root: /AutoGraderExamples
 - `cucumber install` => installs gems and rag directory
 - `cucumber`         => runs tests
+- Other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
 
 ### **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
