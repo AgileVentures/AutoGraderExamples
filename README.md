@@ -32,6 +32,7 @@ Example Assignments for Use with the Ruby AutoGrader
 - `cucumber install` => installs gems and rag directory
 - `cucumber`         => runs tests
 - Other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
+- Problems? Send a pull request, it's a great advantage of the vagrant paradigm.
 
 
 #### **Git-immersion Note:** For deployment, and feature tests using Octokit.client over 60/hr, you must do this!
