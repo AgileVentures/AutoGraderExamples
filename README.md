@@ -28,7 +28,7 @@ Example Assignments for Use with the Ruby AutoGrader
 - `vagrant box add hashicorp/precise32` => large vm image download (torrent?)
 - `vagrant up`       => launches and provisions vm if first run, may see warnings and encoding error
 - `vagrant ssh`      => command line access, 
-- cd to the project dir on root: /AutoGraderExamples
+- `cd  /AutoGraderExamples`
 - `cucumber install` => installs gems and rag directory
 - `cucumber`         => runs tests
 - Other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
