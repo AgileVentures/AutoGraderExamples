@@ -8,20 +8,6 @@ Example Assignments for Use with the Ruby AutoGrader
 **Usual platform:** linux or mac, ruby 1.9.3
 
 
-### **Vagrant install:**
-- install VirtualBox from https://www.virtualbox.org/wiki/Downloads
-- install Vagrant from http://www.vagrantup.com/
-- fork on github: https://github.com/AgileVentures/AutoGraderExamples
-- *ON YOUR HOST*: clone or download the zip file
-- cd to the cloned directory
-- `vagrant box add hashicorp/precise32` => large download, may want to torrent
-- `vagrant up`       => launches and provisions vm if first run
-- `vagrant ssh`      => command line access
-- cd to the project dir on root: /AutoGraderExamples
-- `cucumber install` => installs gems and rag directory
-- `cucumber`         => runs tests
-- Other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
-
 ### **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
 - `git clone https://github.com/<your user name>/AutoGraderExamples`, and cd there.
