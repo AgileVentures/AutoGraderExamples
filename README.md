@@ -25,13 +25,14 @@ Example Assignments for Use with the Ruby AutoGrader
 - fork on github: https://github.com/AgileVentures/AutoGraderExamples
 - *ON YOUR HOST*: clone or download the zip file
 - cd to the cloned directory
+- edit that Vagrantfile if you want the vm to use other than 1024 Mb memory and 1 cpu
 - `vagrant box add hashicorp/precise32` => large vm image download (torrent?)
 - `vagrant up`       => launches and provisions vm if first run, may see warnings and encoding error
 - `vagrant ssh`      => command line access, 
 - `cd  /AutoGraderExamples`
 - `cucumber install` => installs gems and rag directory
 - `cucumber`         => runs tests
-- Other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
+- other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
 - Problems? Send a pull request, it's a great advantage of the vagrant paradigm.
 
 
