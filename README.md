@@ -32,6 +32,21 @@ Example Assignments for Use with the Ruby AutoGrader
 - `cucumber features`
 - **"Error due to Missing Gems?"** cd to AutoGraderExamples/rag/ and do `bundle install` there, then `cd ..`
 
+
+### **Vagrant install (under development):**
+- install VirtualBox from https://www.virtualbox.org/wiki/Downloads
+- install Vagrant from http://www.vagrantup.com/
+- fork on github: https://github.com/AgileVentures/AutoGraderExamples
+- *ON YOUR HOST*: clone or download the zip file
+- cd to the cloned directory
+- `vagrant box add hashicorp/precise32` => large download, may want to torrent
+- `vagrant up`       => launches and provisions vm if first run
+- `vagrant ssh`      => command line access
+- cd to the project dir on root: /AutoGraderExamples
+- `cucumber install` => installs gems and rag directory
+- `cucumber`         => runs tests
+- Other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
+
 #### **Git-immersion Note:** For deployment, and feature tests using Octokit.client over 60/hr, you must do this!
 - The OAuth ENV var `GIT_IMMERSION_TOKEN` used in mvp_spec.rb allows 5000/hr rate limit, whereas anonymous Octokit calls allow 60/hr.
 - If not set, it will try to use anonymous connect. Pull requests from forks to AgileVentures/AutoGraderExamples are detected and try to use the anonymous connect.
