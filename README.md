@@ -23,12 +23,13 @@ Example Assignments for Use with the Ruby AutoGrader
 - install VirtualBox from https://www.virtualbox.org/wiki/Downloads
 - install Vagrant from http://www.vagrantup.com/
 - fork on github: https://github.com/AgileVentures/AutoGraderExamples
-- *ON YOUR HOST*: clone or download the zip file
+- install Git on your machine; on Windows add "C:\Program Files (x86)\Git\bin" (or the correct path on your machine) to your Path environment variable
+- *ON YOUR HOST*: clone your repo
 - cd to the cloned directory
 - edit that Vagrantfile if you want the vm to use other than 1024 Mb memory and 1 cpu
 - `vagrant box add hashicorp/precise32` => large vm image download (torrent?)
 - `vagrant up`       => launches and provisions vm if first run, may see warnings and encoding error
-- `vagrant ssh`      => command line access, 
+- `vagrant ssh`      => command line access
 - `cd  /AutoGraderExamples`
 - `cucumber install` => installs gems and rag directory
 - `cucumber`         => runs tests
