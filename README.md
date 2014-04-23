@@ -7,7 +7,7 @@ Example Assignments for Use with the Ruby AutoGrader
 
 **Usual platform:** linux or mac, ruby 1.9.3
 
-## 2 types of install: Class VM image **OR** Vagrant
+## 2 types of install: Class VM image or Vagrant
 
 ### Option 1 **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
@@ -27,7 +27,7 @@ Example Assignments for Use with the Ruby AutoGrader
 - fork on github: https://github.com/AgileVentures/AutoGraderExamples
 - install Git on your machine
   - on Windows add "C:\Program Files (x86)\Git\bin" (or the correct path on your machine) to your Path environment variable
-- *ON YOUR HOST*: clone your repo
+- **ON YOUR HOST**: clone your repo
 - cd to the cloned directory
 - edit that Vagrantfile if you want the vm to use other than 1024 Mb memory and 1 cpu
 - `vagrant box add hashicorp/precise32` => new-style image if you have new Vagrant.
