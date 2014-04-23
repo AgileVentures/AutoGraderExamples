@@ -34,8 +34,9 @@ Example Assignments for Use with the Ruby AutoGrader
   - on older versions of Vagrant: `vagrant box add precise32` and remove the same bit from Vagrantfile.
 - `vagrant up`       => launches and provisions vm if first run, may see warnings and encoding error
 - `vagrant ssh`      => command line access
-- `cd  /AutoGraderExamples`
+- `cd /AutoGraderExamples`
 - `cucumber install` => installs gems and rag directory
+  - if it times out, cd rag and bundle install manually
 - `cucumber`         => runs tests
 - other vagrant commands are `vagrant halt` => stopping, and `vagrant destroy` => permanently delete VM
 - Problems? Send a pull request, it's a great advantage of the vagrant paradigm.
