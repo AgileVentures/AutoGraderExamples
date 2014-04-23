@@ -7,9 +7,9 @@ Example Assignments for Use with the Ruby AutoGrader
 
 **Usual platform:** linux or mac, ruby 1.9.3
 
-## 2 types of install: Install on Class VM image **OR** Vagrant
+## 2 types of install: Class VM image **OR** Vagrant
 
-### **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
+### Option 1 **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
 - `git clone https://github.com/<your user name>/AutoGraderExamples`, and cd there.
 - `ruby -v` should be '1.9.3'
@@ -20,7 +20,8 @@ Example Assignments for Use with the Ruby AutoGrader
 - **"Error due to Missing Gems?"** cd to AutoGraderExamples/rag/ and do `bundle install` there, then `cd ..`
 
 
-### **Vagrant install:**
+
+### Option 2 **Vagrant install:**
 - install VirtualBox from https://www.virtualbox.org/wiki/Downloads
 - install Vagrant from http://www.vagrantup.com/
 - fork on github: https://github.com/AgileVentures/AutoGraderExamples
