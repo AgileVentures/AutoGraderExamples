@@ -27,7 +27,7 @@ Example Assignments for Use with the Ruby AutoGrader
 - *ON YOUR HOST*: clone your repo
 - cd to the cloned directory
 - edit that Vagrantfile if you want the vm to use other than 1024 Mb memory and 1 cpu
-- `vagrant box add hashicorp/precise32` => large vm image download (torrent?)
+- `vagrant box add hashicorp/precise32` => new-style image if you have new Vagrant. If you have an older version of Vagrant, use `vagrant box add precise32` and remove the same bit from Vagrantfile.
 - `vagrant up`       => launches and provisions vm if first run, may see warnings and encoding error
 - `vagrant ssh`      => command line access
 - `cd  /AutoGraderExamples`
