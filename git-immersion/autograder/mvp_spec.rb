@@ -3,7 +3,7 @@ require 'rspec'
 
 def check_client
   if @client.access_token.nil?
-    $stderr.puts "WARNING: ENV['GIT_IMMERSION_TOKEN'] is nil, using anonymous GitHub API.\n"+
+    warn "WARNING: ENV['GIT_IMMERSION_TOKEN'] is nil, using anonymous GitHub API.\n"+
       "Remaining rate limit: #{@client.rate_limit.remaining}. Time to reset: #{@client.rate_limit.resets_in / 60} minutes"
   end
   begin
