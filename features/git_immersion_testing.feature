@@ -13,7 +13,7 @@ Feature: Testing instructor created homeworks
   Examples:
     | test_title              | test_subject            | spec                   | overall_score        | github_username |
     | forked repo             | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 45 | jhasson84       |
-    | non-forked repo         | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 70 | tansaku         |
+    | non-forked repo         | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 75 | tansaku         |
     | non-forked, > 6 commits | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 90 | apelade         |
 
   Scenario: Check GitHub api key is configured
