@@ -9,7 +9,8 @@ Example Assignments for Use with the Ruby AutoGrader
 
 ## 2 types of install: Class VM image or Vagrant
 
-### Option 1 **Install on class VM from http://beta.saasbook.info/bookware-vm-instructions:**
+### Option 1 **Install on class VM**
+http://saasbook.info/bookware-vm-instructions
 - Fork on github: https://github.com/AgileVentures/AutoGraderExamples
 - `git clone https://github.com/<your user name>/AutoGraderExamples`, and cd there.
 - `ruby -v` should be '1.9.3'
