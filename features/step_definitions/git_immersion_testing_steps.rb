@@ -73,7 +73,7 @@ Given(/^I have tests and token set up$/) do
   steps '
     Given I only get 60/hr GitHub API rate limit on pull requests from a dev fork
     And I have a nil or valid value for environment variable "GIT_IMMERSION_TOKEN"
-    And I have the homework in "git-immersion"
+    And I have the homework in "gitimmersion"
     And AutoGraders are in "rag"
   '
 end
