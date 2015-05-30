@@ -4,7 +4,7 @@ Feature: Testing instructor created homeworks
   I would like these homeworks to be automatically tested on submit
 
   Scenario Outline: The project is set up and runs correctly
-    Given I have the homework in "git-immersion"
+    Given I have the homework in "gitimmersion"
     And AutoGraders are in "rag"
     When I run AutoGrader for <test_subject> and <spec>
     Then I should see the results include <overall_score>
