@@ -12,9 +12,9 @@ Feature: Testing instructor created homeworks
     And I should see the execution results with <test_title>
   Examples:
     | test_title              | test_subject            | spec                   | overall_score        | github_username |
-    | forked repo             | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 95 | jhasson84       |
-    | non-forked repo         | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 70 | tansaku         |
-    | non-forked, > 6 commits | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 75 | apelade         |
+    | forked repo, 10 commits | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 95 | jhasson84       |
+    | non-forked, 2 commits   | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 70 | tansaku         |
+    | non-forked, 8 commits   | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 75 | apelade         |
 
   Scenario: Check GitHub api key is configured
     Given I only get 60/hr GitHub API rate limit on pull requests from a dev fork
