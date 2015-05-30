@@ -12,7 +12,7 @@ Feature: Testing instructor created homeworks
     And I should see the execution results with <test_title>
   Examples:
     | test_title              | test_subject            | spec                   | overall_score        | github_username |
-    | forked repo, 10 commits | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 95 | jhasson84       |
+    | forked repo, 4 commits  | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 95 | jhasson84       |
     | non-forked, 2 commits   | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 70 | tansaku         |
     | non-forked, 8 commits   | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 75 | apelade         |
 
