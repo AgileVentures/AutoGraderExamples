@@ -29,7 +29,7 @@ describe "Github" do
     @client = Octokit::Client.new(:access_token => ENV['GIT_IMMERSION_TOKEN'])
     check_client
     @commits =  @client.commits_since(USER_REPO, START_DATE)
-    puts "Commits: #{@commits}"
+    raise "Commits: #{@commits}"
   end
 
 
