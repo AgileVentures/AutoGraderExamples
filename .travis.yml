@@ -1,12 +1,10 @@
 language: ruby
 rvm:
-- 1.9.3
+  - 1.9.3
 env:
   global:
     - secure: "MLwcHLj9um308gO3I0EGUiCR5yPylDdifFDPtUkvleaGs85bbMA/Yfy9Mn8tXXcs9fGMfoNBN1e+J5KkhENEnIXr5BKWMR6CfujxRDJB9fflAPEPz4mp0DuNIOlVj9NXiZBvyoHZIr9ZV2Ha4IPZUcQv1hzrn6DomZ5GVw3z/FM="
-before_install:
-#- gem install cucumber
-#- gem install rspec
+bundler_args: ''
 script:
-- cucumber install/install.feature
-- cucumber features
+  - travis_retry cucumber install/install.feature
+  - cucumber features
