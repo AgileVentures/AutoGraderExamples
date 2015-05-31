@@ -15,8 +15,8 @@ end
 
 describe "Github" do
 
-  # START_DATE = '2014-01-01'
-  START_DATE = Date.today << 12 # months
+  START_DATE = '2014-01-01'
+  # START_DATE = Date.today << 12 # number of months, breaks CI eventually without test
 
   # This ENV var comes from GithubRspecGrader
   USER_REPO = ENV['GITHUB_USERNAME']+'/gitimmersion'
@@ -29,6 +29,7 @@ describe "Github" do
     @client = Octokit::Client.new(:access_token => ENV['GIT_IMMERSION_TOKEN'])
     check_client
     @commits =  @client.commits_since(USER_REPO, START_DATE)
+    raise "Commits: #{@commits}"
   end
 
 

@@ -4,7 +4,7 @@ Feature: Testing instructor created homeworks
   I would like these homeworks to be automatically tested on submit
 
   Scenario Outline: The project is set up and runs correctly
-    Given I have the homework in "git-immersion"
+    Given I have the homework in "gitimmersion"
     And AutoGraders are in "rag"
     When I run AutoGrader for <test_subject> and <spec>
     Then I should see the results include <overall_score>
@@ -12,9 +12,9 @@ Feature: Testing instructor created homeworks
     And I should see the execution results with <test_title>
   Examples:
     | test_title              | test_subject            | spec                   | overall_score        | github_username |
-    | forked repo             | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 45 | jhasson84       |
-    | non-forked repo         | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 70 | tansaku         |
-    | non-forked, > 6 commits | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 90 | apelade         |
+    | forked repo, 4 commits  | solutions/jhasson84.txt | autograder/mvp_spec.rb | Score out of 100: 95 | jhasson84       |
+    | non-forked, 2 commits   | solutions/tansaku.txt   | autograder/mvp_spec.rb | Score out of 100: 70 | tansaku         |
+    | non-forked, 8 commits   | solutions/apelade.txt   | autograder/mvp_spec.rb | Score out of 100: 75 | apelade         |
 
   Scenario: Check GitHub api key is configured
     Given I only get 60/hr GitHub API rate limit on pull requests from a dev fork
