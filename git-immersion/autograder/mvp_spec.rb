@@ -15,11 +15,13 @@ end
 
 describe "Github" do
 
-  # START_DATE = '2014-01-01'
-  START_DATE = Date.today << 12 # months
+  START_DATE = '2014-01-01'
+  # START_DATE = Date.today << 12 # number of months, breaks CI eventually without test
 
-  # This ENV var comes from GithubRspecGrader
-  USER_REPO = ENV['GITHUB_USERNAME']+'/gitimmersion'
+  # This ENV var comes from GithubRspecGrader.
+  # We are using it to be username/repo in solutions.txt files so I can specify a cloned repo with another name
+  USER_REPO = ENV['GITHUB_USERNAME']
+  # USER_REPO = ENV['GITHUB_USERNAME']+'/gitimmersion'
 
   before (:all) do
     # Rate limit is 5000/hr with good token, 60/hr with
@@ -37,6 +39,7 @@ describe "Github" do
   end
 
   it "should be a freshly created repo, not a fork  [50 points]" do
+    
     @client.repository(USER_REPO).parent.should be_nil
   end
 
